@@ -1,7 +1,16 @@
 #!/bin/bash
 
-### This script sets the computer name to the name of the loggedInUser-mac. 
-### Created by Stephen Weinstein for Meissa Pro Services https://www.meissa.net
+###
+#
+#            Name:  set_computer_name_from_user_name.sh
+#     Description:  This script renames a computer to the first initial and
+#					last name of the user who is currently logged in. This script
+#					also appends -mac at the end of the name. 
+#          Author:  Stephen Weinstein
+#         Created:  2017-10-03
+#   Last Modified:  2017-12-30
+#
+###
 
 loggedInUser=$(python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");')
 
