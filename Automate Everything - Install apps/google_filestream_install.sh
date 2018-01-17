@@ -1,5 +1,19 @@
 #!/bin/bash
 
+
+###
+#
+#            Name:  google_filestream_install_latest.sh
+#     Description:  This script downloads and installs the latest version
+#					Google File Stream.
+#          Author:  Stephen Weinstein
+#         Created:  2018-01-16
+#   Last Modified:  2018-01-17
+#
+###
+
+
+
 mkdir ~/filestream_temp
 cd ~/filestream_temp
 

@@ -1,6 +1,18 @@
 #!/bin/sh
 
 
+###
+#
+#            Name:  dropbox_install_latest.sh
+#     Description:  This script downloads and installs the latest version
+#					Dropbox.
+#          Author:  Stephen Weinstein
+#         Created:  2018-01-16
+#   Last Modified:  2018-01-17
+#
+###
+
+
 mkdir ~/dropbox_temp
 cd ~/dropbox_temp
 
@@ -22,8 +34,7 @@ exit 0
 
 
 rm dropbox.dmg
-
-### Unmount disk
+rmdir ~/dropbox_temp
 
 exit 0
 

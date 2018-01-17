@@ -1,6 +1,18 @@
 #!/bin/sh
 
 
+###
+#
+#            Name:  ringcentral_install_latest.sh
+#     Description:  This script downloads and installs the latest version
+#					Ringcentral for Mac.
+#          Author:  Stephen Weinstein
+#         Created:  2018-01-16
+#   Last Modified:  2018-01-17
+#
+###
+
+
 mkdir ~/ringcentral_temp
 cd ~/ringcentral_temp
 
@@ -17,9 +29,14 @@ echo $diskname
 
 diskutil eject /dev/$diskname
 
+exit 0
+
 
 rm ringcentral.dmg
 rmdir ~/ringcentral_temp
+
+### Unmount disk
+
 exit 0
 
 

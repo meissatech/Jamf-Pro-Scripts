@@ -1,5 +1,20 @@
 #!/bin/bash
 
+
+###
+#
+#            Name:  xerox_drivers_install_latest.sh
+#     Description:  This script download ans installs Xerox Printer Drivers for
+#					macOS devices directly from Apple's website. 
+#          Author:  Stephen Weinstein
+#         Created:  2018-01-17
+#   Last Modified:  2018-01-17
+#
+###
+
+
+
+
 mkdir ~/xerox_driver_install_temp
 cd ~/xerox_driver_install_temp
 

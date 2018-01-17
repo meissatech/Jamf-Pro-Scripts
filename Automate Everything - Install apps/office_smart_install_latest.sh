@@ -4,12 +4,11 @@
 ###
 #
 #            Name:  office_smart_install_latest.sh
-#     Description:  This script is designed to run on a recurring frequnecy for
-#                   so that the latest version of Microsoft Office is installed. 
+#     Description:  This script downloads and installs the latest version of Microsoft Word.
 #                   New releases of Office are generally released on a monthly basis.
 #          Author:  Stephen Weinstein
 #         Created:  2018-01-06
-#   Last Modified:  2018-01-06
+#   Last Modified:  2018-01-17
 #
 ###
 
