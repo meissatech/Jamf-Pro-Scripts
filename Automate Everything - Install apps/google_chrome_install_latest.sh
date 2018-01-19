@@ -3,7 +3,7 @@
 
 ###
 #
-#            Name:  google_filestream_install_latest.sh
+#            Name:  google_chrome_install_latest.sh
 #     Description:  This script downloads and installs the latest version
 #					Google Chrome and enables auto-updates. Hannes Juutilainen
 #					created the python source enabling auto-updates.
@@ -12,9 +12,6 @@
 #   Last Modified:  2018-01-17
 #
 ###
-
-
-
 
 
 mkdir ~/googlechrome_temp
