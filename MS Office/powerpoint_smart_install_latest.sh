@@ -18,7 +18,7 @@ mkdir ~/officeinstall_temp
 cd ~/officeinstall_temp
 
 curl -L -o macadmins.html https://macadmins.software/
-url=`sed '98!d' macadmins.html | cat | grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*" | sort | uniq`
+url=`sed '99!d' macadmins.html | cat | grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*" | sort | uniq`
 
 powerpointurl=`echo $url | awk '{print $1}'`
 
