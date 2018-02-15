@@ -11,3 +11,5 @@
  /usr/bin/defaults write /Library/Preferences/com.microsoft.Word kSubUIAppCompletedFirstRunSetup1507 -bool true
 
  /usr/bin/defaults write /Library/Preferences/com.microsoft.onenote.app kSubUIAppCompletedFirstRunSetup1507 -bool true
+
+ defaults write com.microsoft.autoupdate2 HowToCheck -string Manual

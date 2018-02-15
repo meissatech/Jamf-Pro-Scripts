@@ -40,7 +40,7 @@ rmdir ~/officeinstall_temp
 echo "Setting default save location for Office application to On My Mac"
 /usr/bin/defaults write /Library/Preferences/com.microsoft.office DefaultsToLocalOpenSave -bool true
 
-# Suppress Microsoft Office first run promopts
+# Suppress Microsoft Office first run prompts
 
 echo "Suppressing Microsoft word first run prompts..."
  /usr/bin/defaults write /Library/Preferences/com.microsoft.Word kSubUIAppCompletedFirstRunSetup1507 -bool true

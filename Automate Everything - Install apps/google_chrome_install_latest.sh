@@ -9,33 +9,49 @@
 #					created the python source enabling auto-updates.
 #          Author:  Stephen Weinstein
 #         Created:  2018-01-16
-#   Last Modified:  2018-01-17
+#   Last Modified:  2018-02-05
 #
 ###
 
+SERVICE='Google Chrome'
 
-mkdir ~/googlechrome_temp
-cd ~/googlechrome_temp
+# Check to see if Google Chrome is installed
+if [ -e /Applications/Google\ Chrome.app ]
+then 
+  echo "Google Chrome Present"
+  chrome_status=true
+fi
 
-# Installing Google Chrome
-curl -L -o googlechrome.dmg "https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg"
-hdiutil mount -nobrowse googlechrome.dmg
-cp -R "/Volumes/Google Chrome/Google Chrome.app" /Applications
-hdiutil unmount "/Volumes/Google Chrome"
+# Check to see if Google Chrome is open
+if pgrep -xq -- "${SERVICE}"; then
+    echo "Google Chrome is running... Please close to upgrade."
+else
+    echo "Google Chrome is not running"
+    if [ "$chrome_status" = true ] ; then
+      echo "Removing Google Chrome..."
+      rm -rif "/Applications/Google Chrome.app"
+      echo "Google Chrome Removed."
+    fi
+    echo "Google Chrome not present..."
+    echo "Installing Google Chrome..."
 
+    mkdir ~/googlechrome_temp
+    cd ~/googlechrome_temp
+    # Installing Google Chrome
+    curl -L -o googlechrome.dmg "https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg"
+    hdiutil mount -nobrowse googlechrome.dmg
+    cp -R "/Volumes/Google Chrome/Google Chrome.app" /Applications
+    hdiutil unmount "/Volumes/Google Chrome"
 
+    mounteddisk=`diskutil list | grep "Chrome"`
+    diskname=`echo $mounteddisk | awk '{print $7}'`
+    echo $diskname
 
-mounteddisk=`diskutil list | grep "Chrome"`
+    diskutil eject /dev/$diskname
 
-diskname=`echo $mounteddisk | awk '{print $7}'`
-
-echo $diskname
-
-diskutil eject /dev/$diskname
-
-
-rm googlechrome.dmg
-rmdir ~/googlechrome_temp
+    rm googlechrome.dmg
+    rmdir ~/googlechrome_temp
+fi
 
 
 ## Enable auto-updates
